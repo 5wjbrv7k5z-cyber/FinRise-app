@@ -2,7 +2,7 @@
   "name": "FinRise | Build your future.",
   "short_name": "FinRise",
   "description": "Aplicație educațională de finanțe personale și investiții pentru adolescenți.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#0B1026",
   "theme_color": "#0B1026",
