@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Navbar, ActiveTab } from './components/Navbar';
 import { LearnTab } from './components/LearnTab';
 import { SimulatorTab } from './components/SimulatorTab';
+import PrimaLunaPeContPropriu from './components/PrimaLunaPeContPropriu';
 import { ProfileTab } from './components/ProfileTab';
 import { BRAND_CONFIG } from './config/brand';
 
@@ -103,6 +104,18 @@ export function App() {
       };
     });
   };
+  const handleCompleteFirstMonthSim = (earnedXp: number) => {
+    setProgress((prev) => {
+      if (prev.completedLessons.includes('sim_prima_luna_cont_propriu')) {
+        return prev;
+      }
+      return {
+        ...prev,
+        xp: prev.xp + earnedXp,
+        completedLessons: [...prev.completedLessons, 'sim_prima_luna_cont_propriu'],
+      };
+    });
+  };
 
   const handleResetProgress = () => {
     setProgress({
@@ -132,7 +145,16 @@ export function App() {
           />
         )}
 
-        {activeTab === 'simulator' && <SimulatorTab />}
+                {activeTab === 'simulator' && (
+          <div className="space-y-6">
+            <SimulatorTab />
+            <PrimaLunaPeContPropriu
+              hasClaimedXp={progress.completedLessons.includes('sim_prima_luna_cont_propriu')}
+              onCompleteSimulation={handleCompleteFirstMonthSim}
+            />
+          </div>
+        )}
+
 
         {activeTab === 'profile' && (
           <ProfileTab
