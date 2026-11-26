@@ -1,0 +1,26 @@
+export const BRAND_CONFIG = {
+  name: 'FinRise',
+  tagline: 'Build your future.',
+  subtitle: 'Educație financiară inteligentă pentru adolescenți',
+  version: '1.0.0-mvp',
+  colors: {
+    bg: '#0B1026',
+    card: '#171D3D',
+    blue: '#4361EE',
+    purple: '#8B5CF6',
+    lightPurple: '#A78BFA',
+    cyan: '#22D3EE',
+    text: '#F8FAFC',
+    muted: '#A5B4D8',
+    warning: '#FACC15',
+    error: '#EF6461',
+    streak: '#FB923C',
+  },
+  storageKeys: {
+    userProfile: 'finrise_user_profile_v1',
+    progress: 'finrise_progress_v1',
+    simState: 'finrise_sim_state_v1',
+  },
+  xpPerCorrectAnswer: 25,
+  xpPerLessonComplete: 50,
+};
